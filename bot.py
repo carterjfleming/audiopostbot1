@@ -21,7 +21,7 @@ LIKE = False
 
 FOLLOW = False
 
-for tweet in tweepy.Cursor(api.search, search, lang='en').items(10):
+for tweet in tweepy.Cursor(api.search, search, lang='en').items(20):
     try:
         print('\nTweet by: @' + tweet.user.screen_name)
 
@@ -42,5 +42,4 @@ for tweet in tweepy.Cursor(api.search, search, lang='en').items(10):
     except tweepy.TweepError as e:
         print(e.reason)
     except StopIteration:
-        time.sleep(1800)
         break
